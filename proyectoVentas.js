@@ -67,11 +67,21 @@ class Orden{
     }
 
     mostrarOrden(){
-        let productosOrden = '';
+        var productosOrden = '';
         for(let producto of this._productos){
-            productosOrden += '\n{'+ producto.toString()+'}';
+            productosOrden += '\n{'+producto.toString()+'}';
+            
         }
-        console.log(`Orden: ${this._idOrden} Total: $${this.calcularTotal()}, Productos: ${this.productosOrden} `)
+        console.log(`Orden: ${this._idOrden} Total: $${this.calcularTotal()}, Productos: ${productosOrden} `)
     }
     
 }
+
+let producto1 = new Producto('Pantalon',2000)
+let producto2 = new Producto('Camisa',3500)
+
+let orden1 = new Orden()
+orden1.agregarProducto(producto1);
+orden1.agregarProducto(producto2);
+
+orden1.mostrarOrden();
